@@ -26,14 +26,12 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupView()
         setupLable()
         setupTextField()
     }
     
     @IBAction func rgbSlider(_ sender: UISlider) {
-        
         guard let tag = EnumarateRGB(rawValue: sender.tag) else { return }
         
         switch tag {
@@ -48,7 +46,6 @@ class ViewController: UIViewController {
     
     //MARK: - Methods
     private func changeColorView() {
-        
         viewPresrntColorOutlet.backgroundColor = UIColor(red: CGFloat(sliderRedOutlet.value),
                                                          green: CGFloat(sliderGreenOutlet.value),
                                                          blue: CGFloat(sliderBlueOutlet.value),
@@ -56,20 +53,17 @@ class ViewController: UIViewController {
     }
     
     private func setupView() {
-        
         viewPresrntColorOutlet.layer.cornerRadius = 20
         changeColorView()
     }
     
     private func setupLable() {
-        
         labelRed.text = String(sliderRedOutlet.value)
         labelGreen.text = String(sliderGreenOutlet.value)
         labelBlue.text = String(sliderBlueOutlet.value)
     }
     
     private func errorAlert() {
-        
         let alert = UIAlertController(title: "Bad value",
                                       message: "Plese enter value betven 0 and 1",
                                       preferredStyle: .alert)
@@ -89,10 +83,9 @@ class ViewController: UIViewController {
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace,
                                             target: nil,
                                             action: nil)
-        
+    
         toolBar.setItems([flexibleSpace, doneBtn], animated: false)
         toolBar.sizeToFit()
-        
         textFieldRed.inputAccessoryView = toolBar
         textFieldGreen.inputAccessoryView = toolBar
         textFieldBlue.inputAccessoryView = toolBar
@@ -103,7 +96,6 @@ class ViewController: UIViewController {
     }
     
     private func actionSlider(_ slider: UISlider, _ textField: UITextField, _ label: UILabel) {
-        
         let valueInString = String(format: "%.2f", slider.value)
         
         textField.text = valueInString
@@ -126,12 +118,10 @@ extension ViewController: UITextFieldDelegate {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
-        
         view.endEditing(true)
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        
         guard let tag = EnumarateRGB(rawValue: textField.tag) else { return }
         
         switch tag {
@@ -145,7 +135,6 @@ extension ViewController: UITextFieldDelegate {
     }
     
     private func changeValueAfterEdit(_ textField: UITextField, _ slider: UISlider, _ label: UILabel) {
-        
         guard var stringFloat = textField.text, !stringFloat.isEmpty else {
             textField.text = label.text
             return
@@ -161,6 +150,4 @@ extension ViewController: UITextFieldDelegate {
             errorAlert()
         }
     }
-    
-    
 }
