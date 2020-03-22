@@ -46,10 +46,12 @@ class ViewController: UIViewController {
     
     //MARK: - Methods
     private func changeColorView() {
-        viewPresrntColorOutlet.backgroundColor = UIColor(red: CGFloat(sliderRedOutlet.value),
-                                                         green: CGFloat(sliderGreenOutlet.value),
-                                                         blue: CGFloat(sliderBlueOutlet.value),
-                                                         alpha: 1)
+        viewPresrntColorOutlet.backgroundColor = UIColor(
+            red: CGFloat(sliderRedOutlet.value),
+            green: CGFloat(sliderGreenOutlet.value),
+            blue: CGFloat(sliderBlueOutlet.value),
+            alpha: 1
+        )
     }
     
     private func setupView() {
@@ -64,9 +66,11 @@ class ViewController: UIViewController {
     }
     
     private func errorAlert() {
-        let alert = UIAlertController(title: "Bad value",
-                                      message: "Plese enter value betven 0 and 1",
-                                      preferredStyle: .alert)
+        let alert = UIAlertController(
+            title: "Bad value",
+            message: "Plese enter value betven 0 and 1",
+            preferredStyle: .alert
+        )
         let btnAlert = UIAlertAction(title: "OK", style: .default)
         
         alert.addAction(btnAlert)
@@ -76,10 +80,12 @@ class ViewController: UIViewController {
     private func setupTextField() {
         
         let toolBar = UIToolbar()
-        let doneBtn = UIBarButtonItem(title: "Done",
-                                      style: .done,
-                                      target: self,
-                                      action: #selector(doneBtnAction))
+        let doneBtn = UIBarButtonItem(
+            title: "Done",
+            style: .done,
+            target: self,
+            action: #selector(doneBtnAction)
+        )
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace,
                                             target: nil,
                                             action: nil)
