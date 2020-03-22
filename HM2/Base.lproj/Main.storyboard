@@ -7,51 +7,49 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Start View Controller-->
         <scene sceneID="EQb-1O-IL4">
             <objects>
-                <viewController id="HC2-eN-aoQ" sceneMemberID="viewController">
+                <viewController id="HC2-eN-aoQ" customClass="StartViewController" customModule="HM2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AxA-Qs-BJ9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="156" translatesAutoresizingMaskIntoConstraints="NO" id="PgM-ge-rGY">
-                                <rect key="frame" x="30" y="30" width="315" height="557"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unnamed" translatesAutoresizingMaskIntoConstraints="NO" id="hYE-Zm-3dj">
-                                        <rect key="frame" x="0.0" y="0.0" width="315" height="358"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" priority="999" constant="314" id="QyS-XO-zS1"/>
-                                        </constraints>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oua-WY-BjK">
-                                        <rect key="frame" x="0.0" y="514" width="315" height="43"/>
-                                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="43" id="ODT-dP-8Tq"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                        <state key="normal" title="Start">
-                                            <color key="titleColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="5"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="TsV-Mk-feX"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unnamed" translatesAutoresizingMaskIntoConstraints="NO" id="hYE-Zm-3dj">
+                                <rect key="frame" x="30" y="30" width="315" height="510"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" priority="999" constant="314" id="QyS-XO-zS1"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oua-WY-BjK">
+                                <rect key="frame" x="57.5" y="584" width="260" height="43"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="ODT-dP-8Tq"/>
+                                    <constraint firstAttribute="width" constant="260" id="We4-7J-ufE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="sliderView" modalPresentationStyle="fullScreen" id="TsV-Mk-feX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="SWD-i0-Jog" firstAttribute="bottom" secondItem="PgM-ge-rGY" secondAttribute="bottom" constant="80" id="4dd-bW-bXq"/>
-                            <constraint firstItem="PgM-ge-rGY" firstAttribute="leading" secondItem="AxA-Qs-BJ9" secondAttribute="leading" constant="30" id="Nha-fL-so3"/>
-                            <constraint firstItem="SWD-i0-Jog" firstAttribute="trailing" secondItem="PgM-ge-rGY" secondAttribute="trailing" constant="30" id="fDp-33-dUT"/>
-                            <constraint firstItem="PgM-ge-rGY" firstAttribute="top" secondItem="SWD-i0-Jog" secondAttribute="top" constant="30" id="pkN-uA-kp7"/>
+                            <constraint firstItem="SWD-i0-Jog" firstAttribute="trailing" secondItem="hYE-Zm-3dj" secondAttribute="trailing" constant="30" id="32w-kN-FIC"/>
+                            <constraint firstItem="Oua-WY-BjK" firstAttribute="top" secondItem="hYE-Zm-3dj" secondAttribute="bottom" constant="44" id="CTo-YA-HY4"/>
+                            <constraint firstItem="hYE-Zm-3dj" firstAttribute="top" secondItem="SWD-i0-Jog" secondAttribute="top" constant="30" id="WNq-CB-Ezh"/>
+                            <constraint firstItem="SWD-i0-Jog" firstAttribute="bottom" secondItem="Oua-WY-BjK" secondAttribute="bottom" constant="40" id="eaO-Py-he0"/>
+                            <constraint firstItem="hYE-Zm-3dj" firstAttribute="leading" secondItem="SWD-i0-Jog" secondAttribute="leading" constant="30" id="nXo-dc-DzL"/>
+                            <constraint firstItem="Oua-WY-BjK" firstAttribute="centerX" secondItem="SWD-i0-Jog" secondAttribute="centerX" id="p8J-Ji-Vdw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SWD-i0-Jog"/>
                     </view>
@@ -202,21 +200,24 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sTN-Ml-ifm">
-                                <rect key="frame" x="127.5" y="607" width="120" height="40"/>
+                                <rect key="frame" x="87.5" y="607" width="200" height="40"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="ROb-Qg-W68"/>
-                                    <constraint firstAttribute="width" constant="120" id="yF8-2y-8rE"/>
+                                    <constraint firstAttribute="width" constant="200" id="yF8-2y-8rE"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <state key="normal" title="Done">
                                     <color key="titleColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRaduis">
-                                        <integer key="value" value="5"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="doneButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="l3T-Rv-hFy"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>

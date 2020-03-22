@@ -23,9 +23,15 @@ class ViewController: UIViewController {
     @IBOutlet var textFieldGreen: UITextField!
     @IBOutlet var textFieldBlue: UITextField!
     
+    var delegate: RGBDelegate!
+    var red: Float!
+    var green: Float!
+    var blue: Float!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupSlider()
         setupView()
         setupLable()
         setupTextField()
@@ -44,7 +50,20 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func doneButton() {
+        delegate.changeColorView(red: sliderRedOutlet.value,
+                                 green: sliderGreenOutlet.value,
+                                 blue: sliderBlueOutlet.value)
+        
+        dismiss(animated: true)
+    }
     //MARK: - Methods
+    private func setupSlider() {
+        sliderRedOutlet.value = red.format(countAfterDot: 2)
+        sliderGreenOutlet.value = green.format(countAfterDot: 2)
+        sliderBlueOutlet.value = blue.format(countAfterDot: 2)
+    }
+    
     private func changeColorView() {
         viewPresrntColorOutlet.backgroundColor = UIColor(
             red: CGFloat(sliderRedOutlet.value),
